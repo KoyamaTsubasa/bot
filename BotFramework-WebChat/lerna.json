@@ -1,0 +1,16 @@
+{
+  "lerna": "3.19.0",
+  "packages": [
+    "packages/*",
+    "packages/support/*",
+    "packages/test/*"
+  ],
+  "version": "0.0.0",
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": [
+        "--legacy-peer-deps"
+      ]
+    }
+  }
+}

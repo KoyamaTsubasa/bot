@@ -1,0 +1,8 @@
+/**/*
+!/__tests__
+/__tests__/__image_snapshots__
+!/packages/bundle/dist
+!/packages/playground/build
+!/packages/test/harness/dist
+!/packages/test/page-object/dist
+!/serve-test.json

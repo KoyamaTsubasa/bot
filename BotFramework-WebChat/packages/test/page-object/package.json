@@ -1,0 +1,42 @@
+{
+  "name": "test-page-object",
+  "version": "0.0.0-0",
+  "description": "",
+  "private": true,
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 14.0.0"
+  },
+  "scripts": {
+    "build": "npm run build:babel && npm run build:esbuild",
+    "build:babel": "babel --out-dir lib/ src/",
+    "build:esbuild": "esbuild lib/index.js --bundle --outfile=dist/test-page-object.js --sourcemap --target=chrome80",
+    "eslint": "npm run precommit",
+    "precommit": "npm run precommit:eslint -- src",
+    "precommit:eslint": "../../../node_modules/.bin/eslint --report-unused-disable-directives --max-warnings 0",
+    "prestart": "npm run build",
+    "start": "concurrently --kill-others \"npm run start:*\"",
+    "start:babel": "npm run build:babel -- --skip-initial-build --watch",
+    "start:esbuild": "npm run build:esbuild -- --watch"
+  },
+  "dependencies": {
+    "base64-arraybuffer": "1.0.1",
+    "classnames": "2.3.1",
+    "core-js": "3.18.3",
+    "event-iterator": "2.0.0",
+    "event-target-shim": "6.0.2",
+    "microsoft-cognitiveservices-speech-sdk": "1.17.0",
+    "p-defer": "4.0.0",
+    "prop-types": "15.7.2",
+    "simple-update-in": "2.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "concurrently": "^6.3.0",
+    "esbuild": "^0.12.29"
+  }
+}

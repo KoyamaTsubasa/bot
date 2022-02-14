@@ -1,0 +1,23 @@
+{
+  "name": "chat-component",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "private": true,
+  "scripts": {
+    "build": "babel --out-dir lib src/**/*",
+    "start": "npm run build -- --verbose --watch"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "botframework-webchat": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "isomorphic-react",
+  "version": "0.0.0-0",
+  "main": "dist/react.js",
+  "private": true,
+  "scripts": {
+    "build": "npm run build:babel && npm run build:webpack",
+    "build:babel": "babel src --out-dir lib --verbose",
+    "build:webpack": "webpack-cli",
+    "eslint": "npm run precommit",
+    "precommit": "npm run precommit:eslint -- src",
+    "precommit:eslint": "../../node_modules/.bin/eslint --report-unused-disable-directives --max-warnings 0",
+    "start": "npm run start:note && npm run start:babel && npm run start:webpack",
+    "start:babel": "npm run build:babel",
+    "start:note": "echo \"isomorphic-react is not under active development; running in non-watch mode.\"",
+    "start:webpack": "npm run build:webpack"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "concurrently": "^6.3.0",
+    "webpack": "^5.58.2",
+    "webpack-cli": "^4.9.0"
+  }
+}
